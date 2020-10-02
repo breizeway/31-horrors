@@ -1,0 +1,43 @@
+Number,ViewWeek,ViewDay,Title,ReleaseYear,StreamUrl,WikiUrl,ImdbUrl,RtUrl
+0,1,1,,,,,,
+0,1,2,,,,,,
+0,1,3,,,,,,
+0,1,4,,,,,,
+1,1,5,Underworld,2003,UnderworldStreamUrl.test,UnderworldWikiUrl.test,UnderworldImdbUrl.test,UnderworldRtUrl.test
+2,1,6,Alligator,1980,AlligatorStreamUrl.test,AlligatorWikiUrl.test,AlligatorImdbUrl.test,AlligatorRtUrl.test
+3,1,7,The Witches of Eastwick,1987,The Witches of EastwickStreamUrl.test,The Witches of EastwickWikiUrl.test,The Witches of EastwickImdbUrl.test,The Witches of EastwickRtUrl.test
+4,2,1,Salem’s Lot ,1979,Salem’s Lot StreamUrl.test,Salem’s Lot WikiUrl.test,Salem’s Lot ImdbUrl.test,Salem’s Lot RtUrl.test
+5,2,2,Joshua,2007,JoshuaStreamUrl.test,JoshuaWikiUrl.test,JoshuaImdbUrl.test,JoshuaRtUrl.test
+6,2,3,Deadly Friend,1986,Deadly FriendStreamUrl.test,Deadly FriendWikiUrl.test,Deadly FriendImdbUrl.test,Deadly FriendRtUrl.test
+7,2,4,Silence of the Lambs,1991,Silence of the LambsStreamUrl.test,Silence of the LambsWikiUrl.test,Silence of the LambsImdbUrl.test,Silence of the LambsRtUrl.test
+8,2,5,Scanners,1981,ScannersStreamUrl.test,ScannersWikiUrl.test,ScannersImdbUrl.test,ScannersRtUrl.test
+9,2,6,The Fog,2005,The FogStreamUrl.test,The FogWikiUrl.test,The FogImdbUrl.test,The FogRtUrl.test
+10,2,7,Underwater,2020,UnderwaterStreamUrl.test,UnderwaterWikiUrl.test,UnderwaterImdbUrl.test,UnderwaterRtUrl.test
+11,3,1,Rocky Horror Picture Show,1975,Rocky Horror Picture ShowStreamUrl.test,Rocky Horror Picture ShowWikiUrl.test,Rocky Horror Picture ShowImdbUrl.test,Rocky Horror Picture ShowRtUrl.test
+12,3,2,The Grudge,2019,The GrudgeStreamUrl.test,The GrudgeWikiUrl.test,The GrudgeImdbUrl.test,The GrudgeRtUrl.test
+13,3,3,The Hunt,2020,The HuntStreamUrl.test,The HuntWikiUrl.test,The HuntImdbUrl.test,The HuntRtUrl.test
+14,3,4,We Need To Talk About Kevin,2011,We Need To Talk About KevinStreamUrl.test,We Need To Talk About KevinWikiUrl.test,We Need To Talk About KevinImdbUrl.test,We Need To Talk About KevinRtUrl.test
+15,3,5,The Adams Family,1991,The Adams FamilyStreamUrl.test,The Adams FamilyWikiUrl.test,The Adams FamilyImdbUrl.test,The Adams FamilyRtUrl.test
+16,3,6,Hatchet,2006,HatchetStreamUrl.test,HatchetWikiUrl.test,HatchetImdbUrl.test,HatchetRtUrl.test
+17,3,7,Let the Right One In,2008,Let the Right One InStreamUrl.test,Let the Right One InWikiUrl.test,Let the Right One InImdbUrl.test,Let the Right One InRtUrl.test
+18,4,1,The Pit and the Pendulum,1961,The Pit and the PendulumStreamUrl.test,The Pit and the PendulumWikiUrl.test,The Pit and the PendulumImdbUrl.test,The Pit and the PendulumRtUrl.test
+19,4,2,Shadow of the Vampire,2000,Shadow of the VampireStreamUrl.test,Shadow of the VampireWikiUrl.test,Shadow of the VampireImdbUrl.test,Shadow of the VampireRtUrl.test
+20,4,3,Chud,1984,ChudStreamUrl.test,ChudWikiUrl.test,ChudImdbUrl.test,ChudRtUrl.test
+21,4,4,Goodnight Mommy,2015,Goodnight MommyStreamUrl.test,Goodnight MommyWikiUrl.test,Goodnight MommyImdbUrl.test,Goodnight MommyRtUrl.test
+22,4,5,Fantasy Island,2019,Fantasy IslandStreamUrl.test,Fantasy IslandWikiUrl.test,Fantasy IslandImdbUrl.test,Fantasy IslandRtUrl.test
+23,4,6,Dawn of the Dead,2004,Dawn of the DeadStreamUrl.test,Dawn of the DeadWikiUrl.test,Dawn of the DeadImdbUrl.test,Dawn of the DeadRtUrl.test
+24,4,7,Hereditary,2018,HereditaryStreamUrl.test,HereditaryWikiUrl.test,HereditaryImdbUrl.test,HereditaryRtUrl.test
+25,5,1,The Mummy,1932,The MummyStreamUrl.test,The MummyWikiUrl.test,The MummyImdbUrl.test,The MummyRtUrl.test
+26,5,2,Hot Fuzz,2007,Hot FuzzStreamUrl.test,Hot FuzzWikiUrl.test,Hot FuzzImdbUrl.test,Hot FuzzRtUrl.test
+27,5,3,Haunted Mansion,2003,Haunted MansionStreamUrl.test,Haunted MansionWikiUrl.test,Haunted MansionImdbUrl.test,Haunted MansionRtUrl.test
+28,5,4,Friday the 13th,2009,Friday the 13thStreamUrl.test,Friday the 13thWikiUrl.test,Friday the 13thImdbUrl.test,Friday the 13thRtUrl.test
+29,5,5,Virus,1999,VirusStreamUrl.test,VirusWikiUrl.test,VirusImdbUrl.test,VirusRtUrl.test
+30,5,6,The Monster Squad,1987,The Monster SquadStreamUrl.test,The Monster SquadWikiUrl.test,The Monster SquadImdbUrl.test,The Monster SquadRtUrl.test
+31,5,7,Abbott and Costello Meet Frankenstein,1948,Abbott and Costello Meet FrankensteinStreamUrl.test,Abbott and Costello Meet FrankensteinWikiUrl.test,Abbott and Costello Meet FrankensteinImdbUrl.test,Abbott and Costello Meet FrankensteinRtUrl.test
+0,6,1,,,,,,
+0,6,2,,,,,,
+0,6,3,,,,,,
+0,6,4,,,,,,
+0,6,5,,,,,,
+0,6,6,,,,,,
+0,6,7,,,,,,
