@@ -9,7 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
   <script>
-    var page_sub_header =         "2020";
+    var button_click_color =      "rgb(65, 40, 77)"
+
+    var year =                    "2020";
 
     var sun_desc =                "Slasher";
     var mon_desc =                "Maniac";
@@ -19,6 +21,7 @@
     var fri_desc =                "Creature Feature";
     var sat_desc =                "Supernatural";
 
+    var film_00_title =           ""
     var film_01_title =           "Stake Land (2010)";
     var film_02_title =           "Alligator (1980)";
     var film_03_title =           "The Wailing (2016)";
@@ -51,6 +54,7 @@
     var film_30_title =           "The Werewolf (MST300)";
     var film_31_title =           "The Grudge (2020)";
 
+    var film_00_synop =           ""
     var film_01_synop =           "In a world of vampires, an expert vampire hunter and his young protégé travel toward sanctuary.";
     var film_02_synop =           "A baby alligator is flushed down a Chicago toilet and survives by eating discarded laboratory rats injected with growth hormones. The small reptile grows gigantic, escapes the city sewers, and goes on a rampage.";
     var film_03_synop =           "Soon after a stranger arrives in a little village, a mysterious sickness starts spreading. A policeman, drawn into the incident, is forced to solve the mystery in order to save his daughter.";
@@ -83,6 +87,7 @@
     var film_30_synop =           "A guy turns people into werewolves for his own sick pleasure while Mike turns into a were-Crow.";
     var film_31_synop =           "A house is cursed by a vengeful ghost that dooms those who enter it with a violent death.";
 
+    var film_00_watch =           ""
     var film_01_watch =           "Available to stream for free on 123-movies.com, stream with a subscription on Amazon Prime, or rent on Youtube";
     var film_02_watch =           "Available to stream for free on 123-movies.com or rent on Youtube";
     var film_03_watch =           "Available to stream for free on 123-movies.com, stream with a subscription on Amazon Prime, or rent on Youtube";
@@ -120,11 +125,15 @@
 
 <body id="body">
 
+  <div id="body_divXhdr">
+    <h1 id="body_divXhdr_txtXhdr" class="page_header_txt">31 Horrors</h1>
+    <h1 id="body_divXhdr_txtXsubHdr" class="page_header_txt"></h1>
+  </div>
+
   <div id="content">
 
-    <div id="page_header_div">
-      <h1 id="page_header" class="page_header_text">31 Horrors</h1>
-      <h1 id="page_sub_header" class="page_header_text"></h1>
+    <div id="content_divXmy">
+      <h1 id="content_my_txt">October <span id="content_my_txt_year"></span></h1>
     </div>
 
     <div id="calendar">
@@ -163,7 +172,7 @@
       <div id="cal_rowXr02" class="cal_row">
 
         <div id="cal_cellXr02c01" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c01_button" class="cal_cell_button" onclick="display__cal_dropXr02c01()">
+          <button id="cal_cellXr02c01_button" class="cal_cell_button" onclick="click__cal_dropXr02c01()">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c01_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -172,7 +181,7 @@
         </div>
 
         <div id="cal_cellXr02c02" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c02_button" class="cal_cell_button" onclick="display__cal_dropXr02c02()">
+          <button id="cal_cellXr02c02_button" class="cal_cell_button" onclick="click__cal_dropXr02c02()">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c02_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -181,7 +190,7 @@
         </div>
 
         <div id="cal_cellXr02c03" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c03_button" class="cal_cell_button" onclick="display__cal_dropXr02c03()">
+          <button id="cal_cellXr02c03_button" class="cal_cell_button" onclick="click__cal_dropXr02c03()">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c03_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -190,7 +199,7 @@
         </div>
 
         <div id="cal_cellXr02c04" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c04_button" class="cal_cell_button" onclick="display__cal_dropXr02c04()">
+          <button id="cal_cellXr02c04_button" class="cal_cell_button" onclick="click__cal_dropXr02c04()">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c04_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -199,7 +208,7 @@
         </div>
 
         <div id="cal_cellXr02c05" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c05_button" class="cal_cell_button" onclick="display__cal_dropXr02c05()">
+          <button id="cal_cellXr02c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr02c05')" onmousedown="down__cal_button(this.id)">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c05_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -208,7 +217,7 @@
         </div>
 
         <div id="cal_cellXr02c06" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c06_button" class="cal_cell_button" onclick="display__cal_dropXr02c06()">
+          <button id="cal_cellXr02c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr02c06')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c06_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -217,7 +226,7 @@
         </div>
 
         <div id="cal_cellXr02c07" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr02c07_button" class="cal_cell_button" onclick="display__cal_dropXr02c07()">
+          <button id="cal_cellXr02c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr02c07')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr02c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr02c07_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -225,178 +234,192 @@
           </button>
         </div>
 
-        <div id="cal_dropXr02c01" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+        <div id="cal_dropXr02c01" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c02" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+        <div id="cal_dropXr02c02" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c03" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+        <div id="cal_dropXr02c03" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c04" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+        <div id="cal_dropXr02c04" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c05" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+        <div id="cal_dropXr02c05" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c06" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+        <div id="cal_dropXr02c06" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
-        <div id="cal_dropXr02c07" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr02c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr02c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr02c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+        <div id="cal_dropXr02c07" class="cal_drop cal_dropXr02">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr02c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr02c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr02c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr02c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr02c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr02c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr02c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr02c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr02c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr02c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr02c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr02c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr02c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr02c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr02c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
@@ -405,7 +428,7 @@
       <div id="cal_rowXr03" class="cal_row">
 
         <div id="cal_cellXr03c01" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c01_button" class="cal_cell_button" onclick="display__cal_dropXr03c01()">
+          <button id="cal_cellXr03c01_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c01')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c01_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -414,7 +437,7 @@
         </div>
 
         <div id="cal_cellXr03c02" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c02_button" class="cal_cell_button" onclick="display__cal_dropXr03c02()">
+          <button id="cal_cellXr03c02_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c02')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c02_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -423,7 +446,7 @@
         </div>
 
         <div id="cal_cellXr03c03" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c03_button" class="cal_cell_button" onclick="display__cal_dropXr03c03()">
+          <button id="cal_cellXr03c03_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c03')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c03_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -432,7 +455,7 @@
         </div>
 
         <div id="cal_cellXr03c04" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c04_button" class="cal_cell_button" onclick="display__cal_dropXr03c04()">
+          <button id="cal_cellXr03c04_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c04')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c04_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -441,7 +464,7 @@
         </div>
 
         <div id="cal_cellXr03c05" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c05_button" class="cal_cell_button" onclick="display__cal_dropXr03c05()">
+          <button id="cal_cellXr03c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c05')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c05_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -450,7 +473,7 @@
         </div>
 
         <div id="cal_cellXr03c06" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c06_button" class="cal_cell_button" onclick="display__cal_dropXr03c06()">
+          <button id="cal_cellXr03c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c06')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c06_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -459,7 +482,7 @@
         </div>
 
         <div id="cal_cellXr03c07" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr03c07_button" class="cal_cell_button" onclick="display__cal_dropXr03c07()">
+          <button id="cal_cellXr03c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr03c07')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr03c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr03c07_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -468,177 +491,191 @@
         </div>
 
         <div id="cal_dropXr03c01" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c02" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c03" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c04" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c05" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c06" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr03c07" class="cal_drop cal_dropXr03">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr03c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr03c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr03c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr03c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr03c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr03c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr03c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr03c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr03c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr03c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr03c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr03c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr03c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr03c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr03c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr03c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr03c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr03c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
@@ -647,7 +684,7 @@
       <div id="cal_rowXr04" class="cal_row">
 
         <div id="cal_cellXr04c01" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c01_button" class="cal_cell_button" onclick="display__cal_dropXr04c01()">
+          <button id="cal_cellXr04c01_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c01')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c01_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -656,7 +693,7 @@
         </div>
 
         <div id="cal_cellXr04c02" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c02_button" class="cal_cell_button" onclick="display__cal_dropXr04c02()">
+          <button id="cal_cellXr04c02_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c02')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c02_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -665,7 +702,7 @@
         </div>
 
         <div id="cal_cellXr04c03" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c03_button" class="cal_cell_button" onclick="display__cal_dropXr04c03()">
+          <button id="cal_cellXr04c03_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c03')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c03_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -674,7 +711,7 @@
         </div>
 
         <div id="cal_cellXr04c04" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c04_button" class="cal_cell_button" onclick="display__cal_dropXr04c04()">
+          <button id="cal_cellXr04c04_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c04')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c04_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -683,7 +720,7 @@
         </div>
 
         <div id="cal_cellXr04c05" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c05_button" class="cal_cell_button" onclick="display__cal_dropXr04c05()">
+          <button id="cal_cellXr04c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c05')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c05_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -692,7 +729,7 @@
         </div>
 
         <div id="cal_cellXr04c06" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c06_button" class="cal_cell_button" onclick="display__cal_dropXr04c06()">
+          <button id="cal_cellXr04c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c06')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c06_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -701,7 +738,7 @@
         </div>
 
         <div id="cal_cellXr04c07" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr04c07_button" class="cal_cell_button" onclick="display__cal_dropXr04c07()">
+          <button id="cal_cellXr04c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr04c07')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr04c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr04c07_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -710,177 +747,191 @@
         </div>
 
         <div id="cal_dropXr04c01" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c02" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c03" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c04" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c05" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c06" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr04c07" class="cal_drop cal_dropXr04">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr04c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr04c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr04c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr04c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr04c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr04c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr04c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr04c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr04c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr04c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr04c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr04c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr04c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr04c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr04c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr04c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr04c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr04c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
@@ -889,7 +940,7 @@
       <div id="cal_rowXr05" class="cal_row">
 
         <div id="cal_cellXr05c01" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c01_button" class="cal_cell_button" onclick="display__cal_dropXr05c01()">
+          <button id="cal_cellXr05c01_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c01')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c01_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -898,7 +949,7 @@
         </div>
 
         <div id="cal_cellXr05c02" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c02_button" class="cal_cell_button" onclick="display__cal_dropXr05c02()">
+          <button id="cal_cellXr05c02_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c02')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c02_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -907,7 +958,7 @@
         </div>
 
         <div id="cal_cellXr05c03" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c03_button" class="cal_cell_button" onclick="display__cal_dropXr05c03()">
+          <button id="cal_cellXr05c03_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c03')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c03_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -916,7 +967,7 @@
         </div>
 
         <div id="cal_cellXr05c04" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c04_button" class="cal_cell_button" onclick="display__cal_dropXr05c04()">
+          <button id="cal_cellXr05c04_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c04')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c04_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -925,7 +976,7 @@
         </div>
 
         <div id="cal_cellXr05c05" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c05_button" class="cal_cell_button" onclick="display__cal_dropXr05c05()">
+          <button id="cal_cellXr05c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c05')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c05_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -934,7 +985,7 @@
         </div>
 
         <div id="cal_cellXr05c06" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c06_button" class="cal_cell_button" onclick="display__cal_dropXr05c06()">
+          <button id="cal_cellXr05c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c06')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c06_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -943,7 +994,7 @@
         </div>
 
         <div id="cal_cellXr05c07" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr05c07_button" class="cal_cell_button" onclick="display__cal_dropXr05c07()">
+          <button id="cal_cellXr05c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr05c07')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr05c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr05c07_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -952,177 +1003,191 @@
         </div>
 
         <div id="cal_dropXr05c01" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c02" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c03" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c04" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c05" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c06" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr05c07" class="cal_drop cal_dropXr05">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr05c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr05c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr05c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr05c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr05c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr05c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr05c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr05c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr05c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr05c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr05c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr05c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr05c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr05c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr05c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr05c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr05c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr05c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
@@ -1131,7 +1196,7 @@
       <div id="cal_rowXr06" class="cal_row">
 
         <div id="cal_cellXr06c01" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c01_button" class="cal_cell_button" onclick="display__cal_dropXr06c01()">
+          <button id="cal_cellXr06c01_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c01')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c01_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1140,7 +1205,7 @@
         </div>
 
         <div id="cal_cellXr06c02" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c02_button" class="cal_cell_button" onclick="display__cal_dropXr06c02()">
+          <button id="cal_cellXr06c02_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c02')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c02_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1149,7 +1214,7 @@
         </div>
 
         <div id="cal_cellXr06c03" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c03_button" class="cal_cell_button" onclick="display__cal_dropXr06c03()">
+          <button id="cal_cellXr06c03_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c03')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c03_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1158,7 +1223,7 @@
         </div>
 
         <div id="cal_cellXr06c04" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c04_button" class="cal_cell_button" onclick="display__cal_dropXr06c04()">
+          <button id="cal_cellXr06c04_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c04')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c04_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1167,7 +1232,7 @@
         </div>
 
         <div id="cal_cellXr06c05" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c05_button" class="cal_cell_button" onclick="display__cal_dropXr06c05()">
+          <button id="cal_cellXr06c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c05')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c05_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1176,7 +1241,7 @@
         </div>
 
         <div id="cal_cellXr06c06" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c06_button" class="cal_cell_button" onclick="display__cal_dropXr06c06()">
+          <button id="cal_cellXr06c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c06')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c06_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1185,7 +1250,7 @@
         </div>
 
         <div id="cal_cellXr06c07" class="cal_cell cal_cellXnotHdr">
-          <button id="cal_cellXr06c07_button" class="cal_cell_button" onclick="display__cal_dropXr06c07()">
+          <button id="cal_cellXr06c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr06c07')">
             <div class="cal_cell_button_div">
               <h2 id="cal_cellXr06c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
               <h3 id="cal_cellXr06c07_button_div_title" class ="cal_cell_button_div_title"></h3>
@@ -1194,177 +1259,447 @@
         </div>
 
         <div id="cal_dropXr06c01" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c02" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c03" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c04" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c05" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c06" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
-          </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
         <div id="cal_dropXr06c07" class="cal_drop cal_dropXr06">
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
-            <div class="cal_drop_divXmeta_NS">
-              <h2 id ="cal_dropXr06c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
-              <h2 id ="cal_dropXr06c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
-              <h2 id ="cal_dropXr06c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr06c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr06c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr06c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr06c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
             </div>
-            <h3 id ="cal_dropXr06c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr06c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr06c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr06c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr06c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr06c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
-            <img id="cal_dropXr06c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+        </div>
+
+      </div>
+
+      <div id="cal_rowXr07" class="cal_row">
+
+        <div id="cal_cellXr07c01" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c01_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c01')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c01_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c01_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c02" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c02_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c02')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c02_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c02_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c03" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c03_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c03')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c03_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c03_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c04" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c04_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c04')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c04_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c04_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c05" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c05_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c05')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c05_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c05_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c06" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c06_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c06')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c06_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c06_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_cellXr07c07" class="cal_cell cal_cellXnotHdr">
+          <button id="cal_cellXr07c07_button" class="cal_cell_button" onclick="click__cal_button(this.id, 'cal_dropXr07c07')">
+            <div class="cal_cell_button_div">
+              <h2 id="cal_cellXr07c07_button_div_dayMnth" class="cal_cell_button_div_dayMnth"></h3>
+              <h3 id="cal_cellXr07c07_button_div_title" class ="cal_cell_button_div_title"></h3>
+            </div>
+          </button>
+        </div>
+
+        <div id="cal_dropXr07c01" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c01_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c01_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c01_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Sunday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c01_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c01_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c01_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c01_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c01_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c01_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c01_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
-            <span id ="cal_dropXr06c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+        </div>
+
+        <div id="cal_dropXr07c02" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c02_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c02_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c02_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Monday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c02_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c02_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c02_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c02_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c02_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c02_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c02_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
-          <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
-            <span id ="cal_dropXr06c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+        </div>
+
+        <div id="cal_dropXr07c03" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c03_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c03_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c03_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Tuesday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c03_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c03_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c03_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c03_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c03_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c03_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c03_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
-          <div class="cal_drop_div cal_drop_divXabout">
-            <a id ="cal_dropXr06c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
-            <a id ="cal_dropXr06c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+        </div>
+
+        <div id="cal_dropXr07c04" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c04_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c04_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c04_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Wednesday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c04_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c04_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c04_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c04_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c04_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c04_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c04_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="cal_dropXr07c05" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c05_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c05_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c05_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Thursday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c05_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c05_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c05_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c05_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c05_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c05_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c05_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="cal_dropXr07c06" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c06_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c06_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c06_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Friday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c06_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c06_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c06_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c06_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c06_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c06_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c06_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="cal_dropXr07c07" class="cal_drop cal_dropXr07">
+          <div class="cal_drop_wrap">
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXmeta">
+              <div class="cal_drop_divXmeta_NS">
+                <h2 id ="cal_dropXr07c07_divXmeta_NS_dayMnth" class ="cal_drop_divXmeta_NS_dayMnth"></h2>
+                <h2 id ="cal_dropXr07c07_divXmeta_NS_dayDesc" class ="cal_drop_divXmeta_NS_dayDesc"></h2>
+                <h2 id ="cal_dropXr07c07_divXmeta_NS_dayWeek" class ="cal_drop_divXmeta_NS_dayWeek">Saturday</h2>
+              </div>
+              <h3 id ="cal_dropXr07c07_divXmeta_title" class ="cal_drop_divXmeta_title"></h3>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXpostr">
+              <img id="cal_dropXr07c07_divXpostr_img" class="cal_drop_divXpostr_img" src="">
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXsynop">
+              <span id ="cal_dropXr07c07_divXsynop_txt" class="cal_drop_divXsynop_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXtxt cal_drop_divXwatch">
+              <span id ="cal_dropXr07c07_divXwatch_txt" class="cal_drop_divXwatch_txt"></span>
+            </div>
+            <div class="cal_drop_div cal_drop_divXabout">
+              <a id ="cal_dropXr07c07_divXabout_wiki" class="cal_drop_divXabout_link cal_drop_divXabout_wiki" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c07_divXabout_imdb" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+              <a id ="cal_dropXr07c07_divXabout_rtom" class="cal_drop_divXabout_link cal_drop_divXabout_rtom" href="" target="_blank"></a>
+            </div>
           </div>
         </div>
 
@@ -1378,7 +1713,7 @@
 </body>
 
 <script>
-  document.getElementById("page_sub_header").innerHTML = page_sub_header;
+  document.getElementById("content_my_txt_year").innerHTML = year;
 
   document.getElementById("sun_desc").innerHTML = sun_desc;
   document.getElementById("mon_desc").innerHTML = mon_desc;
@@ -1388,11 +1723,17 @@
   document.getElementById("fri_desc").innerHTML = fri_desc;
   document.getElementById("sat_desc").innerHTML = sat_desc;
 
-  /*
+  document.getElementById("cal_cellXr02c01_button").classList.add("cal_cell_buttonXempty");
+  document.getElementById("cal_cellXr02c02_button").classList.add("cal_cell_buttonXempty");
+  document.getElementById("cal_cellXr02c03_button").classList.add("cal_cell_buttonXempty");
+  document.getElementById("cal_cellXr02c04_button").classList.add("cal_cell_buttonXempty");
+
+  document.getElementById("cal_rowXr07").classList.add("cal_rowXempty");
+
   document.getElementById("cal_cellXr02c01_button_div_dayMnth").innerHTML = '0';
   document.getElementById("cal_cellXr02c02_button_div_dayMnth").innerHTML = '0';
   document.getElementById("cal_cellXr02c03_button_div_dayMnth").innerHTML = '0';
-  document.getElementById("cal_cellXr02c04_button_div_dayMnth").innerHTML = '0';*/
+  document.getElementById("cal_cellXr02c04_button_div_dayMnth").innerHTML = '0';
   document.getElementById("cal_cellXr02c05_button_div_dayMnth").innerHTML = '1';
   document.getElementById("cal_cellXr02c06_button_div_dayMnth").innerHTML = '2';
   document.getElementById("cal_cellXr02c07_button_div_dayMnth").innerHTML = '3';
@@ -1432,11 +1773,10 @@
   document.getElementById("cal_cellXr07c06_button_div_dayMnth").innerHTML = '0';
   document.getElementById("cal_cellXr07c07_button_div_dayMnth").innerHTML = '0';*/
 
-  /*
   document.getElementById("cal_cellXr02c01_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr02c02_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr02c03_button_div_title").innerHTML = film_00_title;
-  document.getElementById("cal_cellXr02c04_button_div_title").innerHTML = film_00_title;*/
+  document.getElementById("cal_cellXr02c04_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr02c05_button_div_title").innerHTML = film_01_title;
   document.getElementById("cal_cellXr02c06_button_div_title").innerHTML = film_02_title;
   document.getElementById("cal_cellXr02c07_button_div_title").innerHTML = film_03_title;
@@ -1476,11 +1816,6 @@
   document.getElementById("cal_cellXr07c06_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr07c07_button_div_title").innerHTML = film_00_title;*/
 
-  /*
-  document.getElementById("cal_dropXr02c01_divXmeta_NS_dayMnth").innerHTML = '0';
-  document.getElementById("cal_dropXr02c02_divXmeta_NS_dayMnth").innerHTML = '0';
-  document.getElementById("cal_dropXr02c03_divXmeta_NS_dayMnth").innerHTML = '0';
-  document.getElementById("cal_dropXr02c04_divXmeta_NS_dayMnth").innerHTML = '0';*/
   document.getElementById("cal_dropXr02c05_divXmeta_NS_dayMnth").innerHTML = '1';
   document.getElementById("cal_dropXr02c06_divXmeta_NS_dayMnth").innerHTML = '2';
   document.getElementById("cal_dropXr02c07_divXmeta_NS_dayMnth").innerHTML = '3';
@@ -1491,7 +1826,7 @@
   document.getElementById("cal_dropXr03c05_divXmeta_NS_dayMnth").innerHTML = '8';
   document.getElementById("cal_dropXr03c06_divXmeta_NS_dayMnth").innerHTML = '9';
   document.getElementById("cal_dropXr03c07_divXmeta_NS_dayMnth").innerHTML = '10';
-  document.getElementById("cal_dropXr04c01_divXmeta_NS_dayMnth").innerHTML = '10';
+  document.getElementById("cal_dropXr04c01_divXmeta_NS_dayMnth").innerHTML = '11';
   document.getElementById("cal_dropXr04c02_divXmeta_NS_dayMnth").innerHTML = '12';
   document.getElementById("cal_dropXr04c03_divXmeta_NS_dayMnth").innerHTML = '13';
   document.getElementById("cal_dropXr04c04_divXmeta_NS_dayMnth").innerHTML = '14';
@@ -1519,8 +1854,7 @@
   document.getElementById("cal_dropXr07c05_divXmeta_NS_dayMnth").innerHTML = '0';
   document.getElementById("cal_dropXr07c06_divXmeta_NS_dayMnth").innerHTML = '0';
   document.getElementById("cal_dropXr07c07_divXmeta_NS_dayMnth").innerHTML = '0';*/
-
-  /*
+/*
   document.getElementById("cal_dropXr02c01_divXmeta_NS_dayDesc").innerHTML = sun_desc;
   document.getElementById("cal_dropXr02c02_divXmeta_NS_dayDesc").innerHTML = mon_desc;
   document.getElementById("cal_dropXr02c03_divXmeta_NS_dayDesc").innerHTML = tue_desc;
@@ -1563,8 +1897,7 @@
   document.getElementById("cal_dropXr07c05_divXmeta_NS_dayDesc").innerHTML = thu_desc;
   document.getElementById("cal_dropXr07c06_divXmeta_NS_dayDesc").innerHTML = fri_desc;
   document.getElementById("cal_dropXr07c07_divXmeta_NS_dayDesc").innerHTML = sat_desc;*/
-
-  /*
+/*
   document.getElementById("cal_dropXr02c01_divXmeta_title").innerHTML = film_00_title;
   document.getElementById("cal_dropXr02c02_divXmeta_title").innerHTML = film_00_title;
   document.getElementById("cal_dropXr02c03_divXmeta_title").innerHTML = film_00_title;
@@ -1607,8 +1940,7 @@
   document.getElementById("cal_dropXr07c05_divXmeta_title").innerHTML = film_00_title;
   document.getElementById("cal_dropXr07c06_divXmeta_title").innerHTML = film_00_title;
   document.getElementById("cal_dropXr07c07_divXmeta_title").innerHTML = film_00_title;*/
-
-  /*
+/*
   document.getElementById("cal_dropXr02c01_divXsynop_txt").innerHTML = film_00_synop;
   document.getElementById("cal_dropXr02c02_divXsynop_txt").innerHTML = film_00_synop;
   document.getElementById("cal_dropXr02c03_divXsynop_txt").innerHTML = film_00_synop;
@@ -1651,8 +1983,7 @@
   document.getElementById("cal_dropXr07c05_divXsynop_txt").innerHTML = film_00_synop;
   document.getElementById("cal_dropXr07c06_divXsynop_txt").innerHTML = film_00_synop;
   document.getElementById("cal_dropXr07c07_divXsynop_txt").innerHTML = film_00_synop;*/
-
-  /*
+/*
   document.getElementById("cal_dropXr02c01_divXwatch_txt").innerHTML = film_00_watch;
   document.getElementById("cal_dropXr02c02_divXwatch_txt").innerHTML = film_00_watch;
   document.getElementById("cal_dropXr02c03_divXwatch_txt").innerHTML = film_00_watch;
@@ -1696,23 +2027,52 @@
   document.getElementById("cal_dropXr07c06_divXwatch_txt").innerHTML = film_00_watch;
   document.getElementById("cal_dropXr07c07_divXwatch_txt").innerHTML = film_00_watch;*/
 
-  function display__cal_dropXr02c05() {
-    var cr_selected_drop = document.getElementById("cal_dropXr02c05");
-    var others = document.querySelectorAll("div.cal_drop");
-    if (
-      cr_selected_drop.style.display === "none" ||
-      cr_selected_drop.style.display === ""
-    ) {
-      others.forEach(function(item) {
-        item.style.display = "none";
-      });
-      cr_selected_drop.style.display = "grid";
-    } else {
-      cr_selected_drop.style.display = "none";
-    }
+  function down__cal_button(button) {
+    button.backgroundColor = "rgba(206, 93, 0, 0.6)"
   }
 
-  function display__cal_dropXr02c06() {
+
+  function click__cal_button(button, drop) {
+    var all_buttons = document.querySelectorAll("button.cal_cell_button");
+    var all_drops = document.querySelectorAll("div.cal_drop");
+    if (
+      document.getElementById(drop).style.display === "none" ||
+      document.getElementById(drop).style.display === ""
+    ) {
+      all_buttons.forEach(function(each_button) {
+        each_button.style.backgroundColor = "inherit";
+      });
+      all_drops.forEach(function(each_drop) {
+        each_drop.style.display = "none";
+      });
+      document.getElementById(button).style.backgroundColor = button_click_color;
+      document.getElementById(drop).style.display = "grid";
+    } else {
+      document.getElementById(button).style.backgroundColor = "inherit";
+      document.getElementById(drop).style.display = "none";
+    }
+  }
+/*
+  function click__cal_dropXr02c05() {
+    var drop = document.getElementById("cal_dropXr02c05");
+    var button = document.getElementById("cal_cellXr02c05_button");
+    var other_drops = document.querySelectorAll("div.cal_drop");
+    if (
+      drop.style.display === "none" ||
+      drop.style.display === ""
+    ) {
+      other_drops.forEach(function(other_drop) {
+        other_drop.style.display = "none";
+      });
+      drop.style.display = "grid";
+      button.style.backgroundColor = "rgb(65, 40, 77)";
+    } else {
+      drop.style.display = "none";
+      button.style.backgroundColor = "inherit";
+    }
+  }
+*/
+  function click__cal_dropXr02c06() {
     var cr_selected_drop = document.getElementById("cal_dropXr02c06");
     var others = document.querySelectorAll("div.cal_drop");
     if (
@@ -1728,7 +2088,7 @@
     }
   }
 
-  function display__cal_dropXr02c07() {
+  function click__cal_dropXr02c07() {
     var cr_selected_drop = document.getElementById("cal_dropXr02c07");
     var others = document.querySelectorAll("div.cal_drop");
     if (
@@ -1744,7 +2104,7 @@
     }
   }
 
-  function display__cal_dropXr03c01() {
+  function click__cal_dropXr03c01() {
     var cr_selected_drop = document.getElementById("cal_dropXr03c01");
     var others = document.querySelectorAll("div.cal_drop");
     if (
