@@ -37,7 +37,7 @@ h1 {
   color: rgb(206, 93, 0);
   font-family: 'green_fuz';
   font-weight: 400;
-  font-size:64pt;
+  font-size: 64pt;
 }
 
 h2 {
@@ -76,6 +76,8 @@ a:hover {
   background-color: rgb(0, 0, 0);
   font-family: 'System';
   color: rgb(200, 200, 200);
+  padding: 0px;
+  margin: 0px;
   font-size: 11pt;
   display: flex;
   flex-direction: column;
@@ -120,17 +122,6 @@ a:hover {
   animation-duration: 4s;
   margin: 0px;
   box-sizing: inherit;
-}
-
-#body_divXhdr_txtXsubHdr {
-  color: rgb(155, 0, 220);
-  font-family: green_fuz;
-  font-weight: 400;
-  font-size: 56pt;
-  font-weight: lighter;
-  transform: rotate(-3deg);/*
-  text-shadow: 5px 5px 5px black;*/
-  text-shadow: 7px -2px 7px rgb(0, 0, 0);
 }
 
 #content {
@@ -178,13 +169,12 @@ div {
   box-sizing: inherit;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 5px, 10px, 15px, rgb(0, 0, 0);
 }
 
 .cal_row {
   display: grid;
-  grid-template: repeat(7, auto) / repeat(7, 1fr);
-  box-sizing: border-box;
+  grid-template: repeat(7, auto) / repeat(7, minmax(0, 1fr));
+  box-sizing: inherit;
   padding: 0px 4px;
   width: 100%;
 }
@@ -195,16 +185,17 @@ div {
 
 .cal_cell {
   box-sizing: inherit;
+  padding: 8px 4px;
+  box-sizing: inherit;
 }
 
 .cal_cellXhdr {
   background-color: inherit;
-  padding: 12px;
+  padding: 8px 4px 8px 12px;
   display: flex;
-  font-weight: lighter;
   flex-direction: column;
   justify-content: flex-end;
-  box-sizing: inherit;/*
+  align-items: flex-start;/*
   border-bottom-color: rgb(64, 64, 64);
   border-bottom-width: 2px;
   border-bottom-style: solid;*/
@@ -213,6 +204,7 @@ div {
 .cal_cellXhdr_desc {
   padding: 0pt 0pt 2pt 0pt;
   margin: 0px;
+  width: 100%;
   color: rgb(0, 0, 0);
   font-family: 'Bangers';
   font-weight: 400;
@@ -233,6 +225,7 @@ div {
 .cal_cellXhdr_day {
   padding: 0px;
   margin: 0px;
+  width: 100%;
   color: rgb(0, 0, 0);
   font-family: 'Bangers';
   font-weight: 400;
@@ -267,10 +260,8 @@ div {
 
 .cal_cellXnotHdr {
   background-color: inherit;
-  padding: 8px 4px;
   margin: 0px;
   height: 150px;
-  box-sizing: border-box;
 }
 
 .cal_cellXnotHdr:hover {
@@ -285,7 +276,9 @@ div {
   border: none;
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;/*
+  flex-direction: column;*/
+  align-items: stretch;
   text-align: left;
   box-sizing: border-box;
   overflow: hidden;
@@ -305,27 +298,17 @@ div {
 }
 
 .cal_cell_button_div {
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: auto;
   padding: 8px;
   margin: 0px 0px;
   box-sizing: border-box;
 }
 
 .cal_cell_button_div:hover {
-  cursor: pointer;/*
-  padding: 7px 9px 9px 7px;*/
-  background-color: rgba(86, 37, 112);/*
-  background-color: rgba(155, 0, 220, 0.25);*/
+  cursor: pointer;
+  background-color: rgba(86, 37, 112);
 }
-/*
-.cal_cell_button:hover
-  >.cal_cell_button_div
-    > .cal_cell_button_div_title {
-      text-decoration: underline;
-
-    }
-*/
 
 .cal_cell_button_div_dayMnth
 , .cal_cell_button_div_title {
@@ -370,11 +353,108 @@ div {
 }
 
 @media screen and (max-width: 1152px) {
-  #container {
-    width: auto;
+
+  h2 {
+    font-size: 2.1vw;
   }
 
-.cal_cellXnotHdr {
-  height: auto;
-}
+  h3 {
+    font-size: 1.51vw;
+  }
+
+  span {
+    font-size: 1.3vw;
+  }
+
+  #container {
+    width: auto;
+    margin: 0vw 1.4vw;
+  }
+
+  #content {
+    padding: 1.4vw;
+    border-radius: 1.4vw;
+  }
+
+  #body_divXhdr {
+    padding: .7vw;
+  }
+
+  #body_divXhdr_txtXhdr {
+    font-size: 10vw;
+    text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), -3px -3px 16px rgba(200, 200, 200, 0.9);
+    margin-bottom: calc(10*0.0875vw);
+  }
+
+  #content_divXmy {
+    margin-bottom: calc(10*0.0875vw);
+  }
+
+  #content_my_txt {
+    font-size: 7.4vw;
+  }
+
+  #content_my_txt_year {
+    font-size: 5.55vw;
+  }
+
+  #calendar {
+    border-radius: .7vw;
+  }
+
+  .cal_row {
+    padding: 0vw .35vw;
+  }
+
+  .cal_cell {
+    padding: .7vw .35vw;
+  }
+
+  .cal_cellXhdr {
+    padding: .7vw .35vw .7vw 1.05vw;
+  }
+
+  .cal_cellXhdr_desc {
+    font-size: 1.65vw;
+    padding: 0vw 0vw calc(2*0.0875vw) 0vw;
+    background-size: 100% 2px;
+  }
+
+  .cal_cellXnotHdr {
+    height: 13vw;
+  }
+
+  .cal_cellXnotHdr:hover {
+    padding: .7vw .7vw .7vw .7vw;
+  }
+
+  .cal_cell_button {
+    border-radius: .7vw;
+  }
+
+  .cal_cell_button:hover {
+    box-shadow: calc(1*0.0875vw) calc(1*0.0875vw) calc(5*0.0875vw) rgba(5, 5, 5, 0.3);
+  }
+
+  .cal_cell_button_div {
+    padding: .7vw;
+  }
+
+  .cal_cell_button_div_title {
+    margin-top: .7vw;
+  }
+
+  .cal_drop {
+    padding: 0vw .35vw .7vw .35vw;
+  }
+
+  .cal_drop_wrap {
+    padding: .7vw;
+    border-radius: .7vw;
+  }
+
+  .cal_drop_div {
+    margin: .7vw;
+    border-radius: .7vw;
+  }
 }
