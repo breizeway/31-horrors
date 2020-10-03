@@ -81,11 +81,21 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 0;
   animation-delay: .15s;
   animation: pageFadeInAnimation ease .2s ;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px 16px;
+  width: 1120px;
   box-sizing: border-box;
 }
 
@@ -95,7 +105,8 @@ a:hover {
   align-items: flex-start;
   padding: 8px;
   margin: 0px;
-  width: 1120px;
+  width: 100%;
+  box-sizing: inherit;
 }
 
 #body_divXhdr_txtXhdr {
@@ -108,6 +119,7 @@ a:hover {
   animation-name: textflicker;
   animation-duration: 4s;
   margin: 0px;
+  box-sizing: inherit;
 }
 
 #body_divXhdr_txtXsubHdr {
@@ -124,8 +136,10 @@ a:hover {
 #content {
   background-color: rgb(32, 32, 32);
   padding: 16px;
-  margin: 16px;
+  margin: 0px;
   border-radius: 16px;
+  width: 100%;
+  box-sizing: inherit;
 }
 
 /*
@@ -160,8 +174,8 @@ div {
   display: grid;
   grid-template: repeat(12, auto) / 1fr;
   height: auto;
-  width: 1120px;
-  box-sizing: border-box;
+  width: 100%;
+  box-sizing: inherit;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 5px, 10px, 15px, rgb(0, 0, 0);
@@ -180,7 +194,7 @@ div {
 }
 
 .cal_cell {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 .cal_cellXhdr {
@@ -190,7 +204,7 @@ div {
   font-weight: lighter;
   flex-direction: column;
   justify-content: flex-end;
-  box-sizing: border-box;/*
+  box-sizing: inherit;/*
   border-bottom-color: rgb(64, 64, 64);
   border-bottom-width: 2px;
   border-bottom-style: solid;*/
@@ -353,4 +367,14 @@ div {
 
 .cal_drop_divXmeta_NS {
   display: none;
+}
+
+@media screen and (max-width: 1152px) {
+  #container {
+    width: auto;
+  }
+
+.cal_cellXnotHdr {
+  height: auto;
+}
 }
