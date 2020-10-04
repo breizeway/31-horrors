@@ -352,7 +352,24 @@ div {
   display: none;
 }
 
+
+
+/*********************************************************
+****************** Narrow Page Width *********************
+*********************************************************/
+
 @media screen and (max-width: 1152px) {
+
+  @keyframes textflicker {
+    from {
+      color: rgba(200, 200, 200, 0.05);
+      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0);
+    }
+    to {
+      color: rgba(200, 200, 200, 0.5);
+      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9);
+    }
+  }
 
   h2 {
     font-size: 2.1vw;
@@ -382,7 +399,7 @@ div {
 
   #body_divXhdr_txtXhdr {
     font-size: 10vw;
-    text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), -3px -3px 16px rgba(200, 200, 200, 0.9);
+    text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9);
     margin-bottom: calc(10*0.0875vw);
   }
 
