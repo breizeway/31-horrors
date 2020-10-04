@@ -22,7 +22,7 @@
   --container_width:        1168;
   --mar:                    8;
 
-  --cal_cellXnotHdr_ht:        150;
+  --cal_cellXnotHdr_ht:        156;
 
   --px_to_vw:               calc(1/calc(1200/100));
 }
