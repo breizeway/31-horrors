@@ -1,3 +1,32 @@
+:root {
+  --a_clr:                  35, 200, 80;
+  --h1_ft:                  86;
+  --h2_ft:                  24;
+  --h3_ft:                  18;
+  --h4_ft:                  16;
+  --span_ft:                14;
+
+  --horrors_ft:             116;
+  --year_ft:                64;
+
+  --main_bg_clr_1:          0, 0, 0;
+  --main_bg_clr_2:          32, 32, 32;
+  --main_bg_clr_3:          42, 42, 42;
+  --main_txt_clr:           200, 200, 200;
+  --main_theme_clr_1:       206, 93, 0;
+  --main_theme_clr_2:       155, 0, 220;
+  --main_theme_clr_2_hvr:   86, 37, 112;
+  --main_theme_clr_2_slct:  65, 40, 77;
+  --cal_hdr_clr:            0, 0, 0;
+
+  --container_width:        1168;
+  --mar:                    8;
+
+  --cal_cellXnotHdr_ht:        150;
+
+  --px_to_vw:               calc(1/calc(1200/100));
+}
+
 @font-face {
   font-family: 'green_fuz';
   src: url('Library/Fonts/Green-Fuz/Web-Fonts/greenfuz_regular_macroman/green_fuz-webfont.woff2') format('woff2'),
@@ -25,47 +54,51 @@
 @keyframes textflicker {
   from {
     color: rgba(200, 200, 200, 0.05);
-    text-shadow: 3px 3px 16px rgba(200, 200, 200, 0), -3px -3px 16px rgba(200, 200, 200, 0);
+    text-shadow: 3px 3px 16px rgba(var(--main_txt_clr), 0), -3px -3px 16px rgba(var(--main_txt_clr), 0);
   }
   to {
     color: rgba(200, 200, 200, 0.5);
-    text-shadow: 3px 3px 16px rgba(200, 200, 200, 0.9), -3px -3px 16px rgba(200, 200, 200, 0.9);
+    text-shadow: 3px 3px 16px rgba(var(--main_txt_clr), 0.9), -3px -3px 16px rgba(var(--main_txt_clr), 0.9);
   }
 }
 
 h1 {
-  color: rgb(206, 93, 0);
+  color: rgb(var(--main_theme_clr_1));
   font-family: 'green_fuz';
   font-weight: 400;
-  font-size: 64pt;
+  font-size: calc(var(--h1_ft)*1px);
 }
 
 h2 {
-  color: rgb(206, 93, 0);
+  color: rgb(var(--main_theme_clr_1));
   font-family: 'Bangers';
   font-weight: 400;
-  font-size: 18pt;
+  font-size: calc(var(--h2_ft)*1px);
 }
 
 h3 {
-  font-size: 13pt;
-  color: rgb(200, 200, 200);
+  font-size: calc(var(--h3_ft)*1px);
+  color: rgb(var(--main_txt_clr));
   font-family: 'System';
   font-weight: 400;
 }
 
 h4 {
-  font-size: 12pt;
+  font-size: calc(var(--h4_ft)*1px);
+}
+
+span {
+  font-size: calc(var(--span_ft)*1px);
 }
 
 a {
-  color: rgb(35, 200, 80);
+  color: rgb(var(--a_clr));
   font-weight: bold;
   text-decoration: none;
 }
 
 a:visited {
-  color: rgb(35, 200, 80);
+  color: rgb(var(--a_clr));
 }
 
 a:hover {
@@ -73,12 +106,11 @@ a:hover {
 }
 
 #body {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(var(--main_bg_clr_1));
   font-family: 'System';
-  color: rgb(200, 200, 200);
+  color: rgb(var(--main_txt_clr));
   padding: 0px;
   margin: 0px;
-  font-size: 11pt;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,13 +123,14 @@ a:hover {
 }
 
 #container {
+  background-color: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0px;
-  margin: 0px 16px;
-  width: 1120px;
+  margin: 0px calc(var(--mar)*2px);
+  width: calc(var(--container_width)*1px);
   box-sizing: border-box;
 }
 
@@ -105,19 +138,18 @@ a:hover {
   display: flex;
   justify-content: left;
   align-items: flex-start;
-  padding: 8px;
+  padding: calc(var(--mar)*1px);
   margin: 0px;
   width: 100%;
   box-sizing: inherit;
 }
 
 #body_divXhdr_txtXhdr {
-  color: rgba(200, 200, 200, 0.5);
+  color: rgba(var(--main_txt_clr), 0.5);
   font-family: green_fuz;
   font-weight: 400;
-  font-size: 86pt;
-  text-shadow: 3px 3px 16px rgba(200, 200, 200, 0.9), -3px -3px 16px rgba(200, 200, 200, 0.9);
-  margin-bottom: 10px;
+  font-size: 116px;
+  text-shadow: 3px 3px 16px rgba(var(--main_txt_clr), 0.9), -3px -3px 16px rgba(var(--main_txt_clr), 0.9);
   animation-name: textflicker;
   animation-duration: 4s;
   margin: 0px;
@@ -125,21 +157,13 @@ a:hover {
 }
 
 #content {
-  background-color: rgb(32, 32, 32);
-  padding: 16px;
+  background-color: rgb(var(--main_bg_clr_2));
+  padding: calc(var(--mar)*2px);
   margin: 0px;
-  border-radius: 16px;
+  border-radius: calc(var(--mar)*2px);
   width: 100%;
   box-sizing: inherit;
 }
-
-/*
-div {
-  border-color: rgb(150, 150, 150);
-  border-width: 1px;
-  border-style: dotted;
-}
-*/
 
 #content_divXmy {
   padding: 0px;
@@ -156,18 +180,18 @@ div {
 }
 
 #content_my_txt_year {
-  color: rgb(155, 0, 220);
-  font-size: 48pt;
+  color: rgb(var(--main_theme_clr_2));
+  font-size: 64px;
 }
 
 #calendar {
-  background-color: rgb(32, 32, 32);
+  background-color: inherit;
   display: grid;
   grid-template: repeat(12, auto) / 1fr;
   height: auto;
   width: 100%;
   box-sizing: inherit;
-  border-radius: 8px;
+  border-radius: calc(var(--mar)*1px);
   overflow: hidden;
 }
 
@@ -175,7 +199,7 @@ div {
   display: grid;
   grid-template: repeat(7, auto) / repeat(7, minmax(0, 1fr));
   box-sizing: inherit;
-  padding: 0px 4px;
+  padding: 0px calc(var(--mar)*0.5px);
   width: 100%;
 }
 
@@ -185,13 +209,13 @@ div {
 
 .cal_cell {
   box-sizing: inherit;
-  padding: 8px 4px;
+  padding: calc(var(--mar)*1px) calc(var(--mar)*0.5px);
   box-sizing: inherit;
 }
 
 .cal_cellXhdr {
   background-color: inherit;
-  padding: 8px 4px 8px 12px;
+  padding: calc(var(--mar)*1px) calc(var(--mar)*0.5px) calc(var(--mar)*1px) calc(var(--mar)*1.5px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -202,22 +226,21 @@ div {
 }
 
 .cal_cellXhdr_desc {
-  padding: 0pt 0pt 2pt 0pt;
+  padding: 0px 0px 2px 0px;
   margin: 0px;
   width: 100%;
-  color: rgb(0, 0, 0);
+  color: rgb(var(--cal_hdr_clr));
   font-family: 'Bangers';
   font-weight: 400;
-  font-size: 14pt;
   background:
     linear-gradient(
       to right,
-      rgba(0,0,0,1) 0%,
-      rgba(0,0,0,0) 95%
+      rgba(var(--cal_hdr_clr),1) 0%,
+      rgba(var(--cal_hdr_clr),0) 95%
     )
     left
     bottom
-    rgb(206, 93, 0)
+    rgb(var(--main_theme_clr_1))
     no-repeat;
   background-size: 100% 2px;
 }
@@ -226,24 +249,24 @@ div {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  color: rgb(0, 0, 0);
+  color: rgb(var(--cal_hdr_clr));
   font-family: 'Bangers';
   font-weight: 400;
 }
 
 #cal_rowXr01 {
-  background-color: rgb(206, 93, 0);
+  background-color: rgb(var(--main_theme_clr_1));
 }
 
 #cal_rowXr02 {
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(var(--main_bg_clr_3));
 }
 #cal_rowXr03 {
   background-color: inherit;
 }
 
 #cal_rowXr04 {
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(var(--main_bg_clr_3));
 }
 
 #cal_rowXr05 {
@@ -251,7 +274,7 @@ div {
 }
 
 #cal_rowXr06 {
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(var(--main_bg_clr_3));
 }
 
 #cal_rowXr07 {
@@ -261,28 +284,26 @@ div {
 .cal_cellXnotHdr {
   background-color: inherit;
   margin: 0px;
-  height: 150px;
+  height: calc(var(--cal_cellXnotHdr_ht)*1px);
 }
 
 .cal_cellXnotHdr:hover {
   padding: 7px 5px 9px 3px;
 }
 
-.cal_cell_button {/*
-  background-color: rgb(32, 32, 32);*/
+.cal_cell_button {
   background-color: inherit;
   padding: 0px;
   margin: 0px;
   border: none;
   width: 100%;
   height: 100%;
-  display: flex;/*
-  flex-direction: column;*/
+  display: flex;
   align-items: stretch;
   text-align: left;
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: calc(var(--mar)*1px);
 }
 
 .cal_cell_button:focus {
@@ -300,14 +321,14 @@ div {
 .cal_cell_button_div {
   width: inherit;
   height: auto;
-  padding: 8px;
+  padding: calc(var(--mar)*1px);
   margin: 0px 0px;
   box-sizing: border-box;
 }
 
 .cal_cell_button_div:hover {
   cursor: pointer;
-  background-color: rgba(86, 37, 112);
+  background-color: rgb(var(--main_theme_clr_2_hvr));
 }
 
 .cal_cell_button_div_dayMnth
@@ -319,7 +340,7 @@ div {
 }
 
 .cal_cell_button_div_title {
-  margin-top: 8px;
+  margin-top: calc(var(--mar)*1px);
 }
 
 .cal_drop {
@@ -327,24 +348,24 @@ div {
   grid-column: 1 / 8;
   margin: 0px;
   display: none;
-  padding: 0px 4px 8px 4px;
+  padding: 0px calc(var(--mar)*0.5px) calc(var(--mar)*1px) calc(var(--mar)*0.5px);
   width: 100%;
   box-sizing: border-box;
 }
 
 .cal_drop_wrap {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(var(--main_bg_clr_1));
   display: grid;
   grid-template: repeat(4, auto) / 1fr 1fr ;
-  padding: 8px;
+  padding: calc(var(--mar)*1px);
   width: 100%;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: calc(var(--mar)*1px);
 }
 
 .cal_drop_div {
-  margin: 8px;
-  border-radius: 8px;
+  margin: calc(var(--mar)*1px);
+  border-radius: calc(var(--mar)*1px);
   overflow: hidden;
 }
 
@@ -352,126 +373,117 @@ div {
   display: none;
 }
 
-
-
 /*********************************************************
 ****************** Narrow Page Width *********************
 *********************************************************/
 
-@media screen and (max-width: 1152px) {
-
+@media screen and (max-width: 1200px) {
+/*
   @keyframes textflicker {
     from {
-      color: rgba(200, 200, 200, 0.05);
-      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0);
+      color: rgba(var(--main_txt_clr), 0.05);
+      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0);
     }
     to {
-      color: rgba(200, 200, 200, 0.5);
-      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9);
+      color: rgba(var(--main_txt_clr), 0.5);
+      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0.9);
     }
   }
-
+*/
+  h1 {
+    font-size: calc(calc(var(--h1_ft)*1vw)*var(--px_to_vw));
+  }
   h2 {
-    font-size: 2.1vw;
+    font-size: calc(calc(var(--h2_ft)*1vw)*var(--px_to_vw));
   }
 
   h3 {
-    font-size: 1.51vw;
-  }
-
-  span {
-    font-size: 1.3vw;
+    font-size: calc(calc(var(--h3_ft)*1vw)*var(--px_to_vw));
   }
 
   #container {
     width: auto;
-    margin: 0vw 1.4vw;
+    margin: 0vw calc(calc(var(--mar)*2vw)*var(--px_to_vw));
   }
 
   #content {
-    padding: 1.4vw;
-    border-radius: 1.4vw;
+    padding: calc(calc(var(--mar)*2vw)*var(--px_to_vw));
+    border-radius: calc(calc(var(--mar)*2vw)*var(--px_to_vw));
   }
 
   #body_divXhdr {
-    padding: .7vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   #body_divXhdr_txtXhdr {
-    font-size: 10vw;
-    text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(200, 200, 200, 0.9);
-    margin-bottom: calc(10*0.0875vw);
+    font-size: calc(calc(var(--horrors_ft)*1vw)*var(--px_to_vw));
+    text-shadow: calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9), calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9);
   }
 
   #content_divXmy {
-    margin-bottom: calc(10*0.0875vw);
-  }
-
-  #content_my_txt {
-    font-size: 7.4vw;
+    margin-bottom: calc(calc(10*1vw)*var(--px_to_vw));
   }
 
   #content_my_txt_year {
-    font-size: 5.55vw;
+    font-size: calc(calc(var(--year_ft)*1vw)*var(--px_to_vw));
   }
 
   #calendar {
-    border-radius: .7vw;
+    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   .cal_row {
-    padding: 0vw .35vw;
+    padding: 0vw calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
 
   .cal_cell {
-    padding: .7vw .35vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
 
   .cal_cellXhdr {
-    padding: .7vw .35vw .7vw 1.05vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw)) calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*1.5vw)*var(--px_to_vw));
   }
 
   .cal_cellXhdr_desc {
-    font-size: 1.65vw;
-    padding: 0vw 0vw calc(2*0.0875vw) 0vw;
-    background-size: 100% calc(2*0.0875vw);
+    padding: 0vw 0vw calc(calc(2*1vw)*var(--px_to_vw)) 0vw;
+    background-size: 100% calc(calc(2*1vw)*var(--px_to_vw));
   }
 
   .cal_cellXnotHdr {
-    height: 13vw;
+    height: calc(calc(var(--cal_cellXnotHdr_ht)*1vw)*var(--px_to_vw));
   }
 
   .cal_cellXnotHdr:hover {
-    padding: .7vw .35vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
 
   .cal_cell_button {
-    border-radius: .7vw;
+    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   .cal_cell_button:hover {
-    box-shadow: calc(1*0.0875vw) calc(1*0.0875vw) calc(5*0.0875vw) rgba(5, 5, 5, 0.3);
+    box-shadow: 0px 0px 0px rgb(0, 0, 0);
   }
 
   .cal_cell_button_div {
-    padding: .7vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   .cal_cell_button_div_title {
-    margin-top: .7vw;
+    margin-top: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   .cal_drop {
-    padding: 0vw .35vw .7vw .35vw;
+    padding: 0vw calc(calc(var(--mar)*0.5vw)*var(--px_to_vw)) calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
 
   .cal_drop_wrap {
-    padding: .7vw;
-    border-radius: .7vw;
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 
   .cal_drop_div {
-    margin: .7vw;
-    border-radius: .7vw;
+    margin: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 }

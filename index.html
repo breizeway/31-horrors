@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
   <script>
-    var button_click_color =      "rgb(65, 40, 77)"
+    var main_theme_clr_2_slct =   "rgb(65, 40, 77)"
 
     var year =                    "2020";
 
@@ -140,31 +140,31 @@
 
         <div id="cal_rowXr01" class="cal_row">
           <div id="cal_cellXr01c01" class="cal_cell cal_cellXhdr">
-            <h2 id="sun_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="sun_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Sunday</h2>
           </div>
           <div id="cal_cellXr01c02" class="cal_cell cal_cellXhdr">
-            <h2 id="mon_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="mon_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Monday</h2>
           </div>
           <div id="cal_cellXr01c03" class="cal_cell cal_cellXhdr">
-            <h2 id="tue_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="tue_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Tuesday</h2>
           </div>
           <div id="cal_cellXr01c04" class="cal_cell cal_cellXhdr">
-            <h2 id="wed_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="wed_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Wednesday</h2>
           </div>
           <div id="cal_cellXr01c05" class="cal_cell cal_cellXhdr">
-            <h2 id="thu_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="thu_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Thursday</h2>
           </div>
           <div id="cal_cellXr01c06" class="cal_cell cal_cellXhdr">
-            <h2 id="fri_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="fri_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Friday</h2>
           </div>
           <div id="cal_cellXr01c07" class="cal_cell cal_cellXhdr">
-            <h2 id="sat_desc" class="cal_cellXhdr_desc"></h2>
+            <h3 id="sat_desc" class="cal_cellXhdr_desc"></h3>
             <h2 class="cal_cellXhdr_day">Saturday</h2>
           </div>
         </div>
@@ -2045,7 +2045,7 @@
       all_drops.forEach(function(each_drop) {
         each_drop.style.display = "none";
       });
-      document.getElementById(button).style.backgroundColor = button_click_color;
+      document.getElementById(button).style.backgroundColor = main_theme_clr_2_slct;
       document.getElementById(drop).style.display = "grid";
     } else {
       document.getElementById(button).style.backgroundColor = "inherit";
