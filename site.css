@@ -417,7 +417,7 @@ div {
   .cal_cellXhdr_desc {
     font-size: 1.65vw;
     padding: 0vw 0vw calc(2*0.0875vw) 0vw;
-    background-size: 100% 2px;
+    background-size: 100% calc(2*0.0875vw);
   }
 
   .cal_cellXnotHdr {
@@ -425,7 +425,7 @@ div {
   }
 
   .cal_cellXnotHdr:hover {
-    padding: .7vw .7vw .7vw .7vw;
+    padding: .7vw .35vw;
   }
 
   .cal_cell_button {
