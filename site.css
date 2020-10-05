@@ -1,10 +1,10 @@
 :root {
   --a_clr:                  35, 200, 80;
   --h1_ft:                  86;
-  --h2_ft:                  24;
-  --h3_ft:                  18;
-  --h4_ft:                  16;
-  --span_ft:                14;
+  --h2_ft:                  26;
+  --h3_ft:                  17;
+  --h4_ft:                  15;
+  --span_ft:                13;
 
   --horrors_ft:             116;
   --year_ft:                64;
@@ -22,7 +22,7 @@
   --container_width:        1168;
   --mar:                    8;
 
-  --cal_cellXnotHdr_ht:        156;
+  --cal_cellXnotHdr_ht:     156;
 
   --px_to_vw:               calc(1/calc(1200/100));
 }
@@ -378,21 +378,22 @@ a:hover {
 *********************************************************/
 
 @media screen and (max-width: 1200px) {
-/*
+
   @keyframes textflicker {
     from {
       color: rgba(var(--main_txt_clr), 0.05);
-      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0);
+      text-shadow: calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0), calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0);
     }
     to {
       color: rgba(var(--main_txt_clr), 0.5);
-      text-shadow: calc(3*0.0875vw) calc(3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0.9), calc(-3*0.0875vw) calc(-3*0.0875vw) calc(16*0.0875vw) rgba(var(--main_txt_clr), 0.9);
+      text-shadow: calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9), calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(-3*1vw)*var(--px_to_vw)) calc(calc(16*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9);
     }
   }
-*/
+
   h1 {
     font-size: calc(calc(var(--h1_ft)*1vw)*var(--px_to_vw));
   }
+
   h2 {
     font-size: calc(calc(var(--h2_ft)*1vw)*var(--px_to_vw));
   }
