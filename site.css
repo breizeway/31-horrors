@@ -2,9 +2,9 @@
   --a_clr:                  35, 200, 80;
   --h1_ft:                  86;
   --h2_ft:                  26;
-  --h3_ft:                  17;
-  --h4_ft:                  15;
-  --span_ft:                13;
+  --h3_ft:                  18;
+  --h4_ft:                  16;
+  --default_ft:             15;
 
   --horrors_ft:             116;
   --year_ft:                64;
@@ -12,7 +12,7 @@
   --main_bg_clr_1:          0, 0, 0;
   --main_bg_clr_2:          32, 32, 32;
   --main_bg_clr_3:          42, 42, 42;
-  --main_txt_clr:           200, 200, 200;
+  --main_txt_clr:           220, 220, 220;
   --main_theme_clr_1:       206, 93, 0;
   --main_theme_clr_2:       155, 0, 220;
   --main_theme_clr_2_hvr:   86, 37, 112;
@@ -80,20 +80,28 @@ h3 {
   font-size: calc(var(--h3_ft)*1px);
   color: rgb(var(--main_txt_clr));
   font-family: 'System';
-  font-weight: 400;
+  font-weight: bold;
 }
 
 h4 {
   font-size: calc(var(--h4_ft)*1px);
+  margin: 0px;
 }
 
-span {
-  font-size: calc(var(--span_ft)*1px);
+span, p, ul {
+  font-size: calc(var(--default_ft)*1px);
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-weight: bold;
+  padding-inline-start: 0px;
+}
+
+ul {
+  list-style-position: inside;
 }
 
 a {
   color: rgb(var(--a_clr));
-  font-weight: bold;
   text-decoration: none;
 }
 
@@ -337,6 +345,7 @@ a:hover {
 
 .cal_drop {
   background-color:inherit;
+  font-size: calc(var(--default_ft)*1px);
   grid-column: 1 / 8;
   margin: 0px;
   display: none;
@@ -348,7 +357,7 @@ a:hover {
 .cal_drop_wrap {
   background-color: rgb(var(--main_bg_clr_1));
   display: grid;
-  grid-template: repeat(4, auto) / 1fr 1fr ;
+  grid-template: repeat(3, auto) / repeat(20, minmax(0, 1fr));
   padding: calc(var(--mar)*1px);
   width: 100%;
   box-sizing: border-box;
@@ -356,9 +365,38 @@ a:hover {
 }
 
 .cal_drop_div {
-  margin: calc(var(--mar)*1px);
+  padding: calc(var(--mar)*1px);
   border-radius: calc(var(--mar)*1px);
   overflow: hidden;
+/*
+  border-style: dotted;
+  border-width: 1px;
+  border-color: rgb(100, 100, 100);
+*/
+}
+
+.cal_drop_divXmeta {
+  grid-column: 1 / 21;
+}
+
+.cal_drop_divXpostr {
+  grid-column: 1 / 4;
+}
+
+.cal_drop_divXpostr_img {
+  width: 100%;
+}
+
+.cal_drop_divXsynop {
+  grid-column: 4 / 10;
+}
+
+.cal_drop_divXwatch {
+  grid-column: 11 / 16;
+}
+
+.cal_drop_divXabout {
+  grid-column: 16 / 21;
 }
 
 .cal_drop_divXmeta_NS {
@@ -396,6 +434,18 @@ a:hover {
 
   h3 {
     font-size: calc(calc(var(--h3_ft)*1vw)*var(--px_to_vw));
+  }
+
+  h4 {
+    font-size: calc(calc(var(--h4_ft)*1vw)*var(--px_to_vw));
+  }
+
+  span, p, ul {
+    font-size: calc(calc(var(--default_ft)*1vw)*var(--px_to_vw));
+  }
+
+  ul {
+    list-style-position: inside;
   }
 
   #container {
@@ -484,7 +534,7 @@ a:hover {
   }
 
   .cal_drop_div {
-    margin: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
     border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 }
