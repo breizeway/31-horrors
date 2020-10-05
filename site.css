@@ -203,10 +203,6 @@ a:hover {
   width: 100%;
 }
 
-.cal_rowXempty {
-  display: none;
-}
-
 .cal_cell {
   box-sizing: inherit;
   padding: calc(var(--mar)*1px) calc(var(--mar)*0.5px);
@@ -314,10 +310,6 @@ a:hover {
   box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.3);
 }
 
-.cal_cell_buttonXempty {
-  display: none;
-}
-
 .cal_cell_button_div {
   width: inherit;
   height: auto;
@@ -370,6 +362,10 @@ a:hover {
 }
 
 .cal_drop_divXmeta_NS {
+  display: none;
+}
+
+.hidden_element {
   display: none;
 }
 
@@ -468,6 +464,10 @@ a:hover {
 
   .cal_cell_button_div {
     padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+  }
+
+  .cal_cell_button_div:hover {
+    background-color: rgb(var(--main_theme_clr_2_slct));
   }
 
   .cal_cell_button_div_title {
