@@ -35,13 +35,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-}
-
 @keyframes pageFadeInAnimation {
     0% {
         opacity: 0;
@@ -102,7 +95,7 @@ ul {
   list-style-position: inside;
 }
 
-li:before {
+li:marker {
   font-size: inherit;
 }
 
@@ -375,6 +368,7 @@ a:hover {
   padding: calc(var(--mar)*1px);
   border-radius: calc(var(--mar)*1px);
   overflow: hidden;
+  line-height: calc(var(--default_ft)*1.2px);
 /*
   border-style: dotted;
   border-width: 1px;
@@ -543,5 +537,6 @@ a:hover {
   .cal_drop_div {
     padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
     border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+    line-height: calc(calc(var(--default_ft)*1.2vw)*var(--px_to_vw))
   }
 }
