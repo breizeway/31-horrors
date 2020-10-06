@@ -71,6 +71,7 @@ h2 {
 
 h3 {
   font-size: calc(var(--h3_ft)*1px);
+  line-height: calc(var(--h3_ft)*1.2px);
   color: rgb(var(--main_txt_clr));
   font-family: Helvetica,arial,sans-serif;
   font-weight: bold;
@@ -84,6 +85,7 @@ h4 {
 
 span, p, ul {
   font-size: calc(var(--default_ft)*1px);
+  line-height: calc(var(--default_ft)*1.2px);
   margin-block-start: 0px;
   margin-block-end: 0px;
   font-weight: bold;
@@ -368,7 +370,6 @@ a:hover {
   padding: calc(var(--mar)*1px);
   border-radius: calc(var(--mar)*1px);
   overflow: hidden;
-  line-height: calc(var(--default_ft)*1.2px);
 /*
   border-style: dotted;
   border-width: 1px;
@@ -435,6 +436,7 @@ a:hover {
 
   h3 {
     font-size: calc(calc(var(--h3_ft)*1vw)*var(--px_to_vw));
+    line-height: calc(calc(calc(var(--h3_ft)*1.2)*1vw)*var(--px_to_vw));
   }
 
   h4 {
@@ -443,6 +445,7 @@ a:hover {
 
   span, p, ul {
     font-size: calc(calc(var(--default_ft)*1vw)*var(--px_to_vw));
+    line-height: calc(calc(calc(var(--default_ft)*1.2)*1vw)*var(--px_to_vw))
   }
 
   ul {
@@ -537,6 +540,5 @@ a:hover {
   .cal_drop_div {
     padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
     border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
-    line-height: calc(calc(var(--default_ft)*1.2vw)*var(--px_to_vw))
   }
 }
