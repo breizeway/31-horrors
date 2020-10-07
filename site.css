@@ -402,6 +402,13 @@ a:hover {
   display: none;
 }
 
+.cal_drop_watch_ls_item:hover {
+  cursor: pointer;
+}
+.cal_drop_about_ls_item:hover {
+  cursor: pointer;
+}
+
 .hidden_element {
   display: none;
 }
