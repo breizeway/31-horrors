@@ -31,8 +31,6 @@
   font-family: 'green_fuz';
   src: url('Library/Fonts/Green-Fuz/Web-Fonts/greenfuz_regular_macroman/green_fuz-webfont.woff2') format('woff2'),
        url('Library/Fonts/Green-Fuz/Web-Fonts/greenfuz_regular_macroman/green_fuz-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @keyframes pageFadeInAnimation {
@@ -58,7 +56,6 @@
 h1 {
   color: rgb(var(--main_theme_clr_1));
   font-family: 'green_fuz';
-  font-weight: 400;
   font-size: calc(var(--h1_ft)*1px);
 }
 
@@ -74,7 +71,7 @@ h3 {
   line-height: calc(var(--h3_ft)*1.2px);
   color: rgb(var(--main_txt_clr));
   font-family: Helvetica,arial,sans-serif;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 h4 {
@@ -87,8 +84,8 @@ span, p, ul {
   font-size: calc(var(--default_ft)*1px);
   line-height: calc(var(--default_ft)*1.2px);
   margin-block-start: 0px;
-  margin-block-end: 0px;
-  font-weight: bold;
+  margin-block-end: 0px;/*
+  font-weight: bold;*/
   padding-inline-start: 0px;
   font-family: Helvetica,arial,sans-serif;
 }
@@ -156,7 +153,7 @@ a:hover {
 #body_divXhdr_txtXhdr {
   color: rgba(var(--main_txt_clr), 0.5);
   font-family: green_fuz;
-  font-weight: 400;
+  font-weight: normal;
   font-size: 116px;
   text-shadow: 3px 3px 16px rgba(var(--main_txt_clr), 0.9), -3px -3px 16px rgba(var(--main_txt_clr), 0.9);
   animation-name: textflicker;
