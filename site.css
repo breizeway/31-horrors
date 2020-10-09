@@ -452,6 +452,10 @@ a:hover {
     line-height: calc(calc(calc(var(--default_ft)*1.2)*1vw)*var(--px_to_vw))
   }
 
+  li:before {
+    -webkit-text-size-adjust: none;
+  }
+
   #container {
     width: auto;
     margin: 0vw calc(calc(var(--mar)*2vw)*var(--px_to_vw));
