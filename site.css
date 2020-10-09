@@ -95,7 +95,7 @@ ul {
 }
 
 li:marker {
-  font-size: inherit;
+  font-size: calc(var(--default_ft)*1px);
 }
 
 a {
@@ -452,8 +452,8 @@ a:hover {
     line-height: calc(calc(calc(var(--default_ft)*1.2)*1vw)*var(--px_to_vw))
   }
 
-  ul {
-    list-style-position: inside;
+  li:marker {
+    font-size: calc(calc(var(--default_ft)*1vw)*var(--px_to_vw));
   }
 
   #container {
