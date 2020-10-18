@@ -1905,19 +1905,19 @@
   /***************************************
   ****** declare all variables here ******
   ***************************************/
-  var main_theme_clr_2_slct =   "rgb(65, 40, 77)"
-  var space =                   " "
+  var media_mbl = window.matchMedia("(max-width: 600px)")
+
 
   var year =                    "2020";
 
 
-  var sun_day =                " Sunday";
-  var mon_day =                " Monday";
-  var tue_day =                " Tuesday";
-  var wed_day =                " Wednesday";
-  var thu_day =                " Thursday";
-  var fri_day =                " Friday";
-  var sat_day =                " Saturday";
+  var sun_day =                "&nbspSunday";
+  var mon_day =                "&nbspMonday";
+  var tue_day =                "&nbspTuesday";
+  var wed_day =                "&nbspWednesday";
+  var thu_day =                "&nbspThursday";
+  var fri_day =                "&nbspFriday";
+  var sat_day =                "&nbspSaturday";
 
 
   var sun_desc =                "Slasher";
@@ -2813,7 +2813,14 @@ document.getElementById("cal_dropXr07c07_divXmeta_NS_dayWeek").innerHTML = sat_d
       all_drops.forEach(function(each_drop) {
         each_drop.style.display = "none";
       });
+      /*
       document.getElementById(button).style.backgroundColor = main_theme_clr_2_slct;
+      */
+      if (media_mbl.matches) { // If media query matches
+        document.getElementById(button).style.backgroundColor = "rgb(12, 12, 12)";
+      } else {
+        document.getElementById(button).style.backgroundColor = "rgb(65, 40, 77)";
+      }
       document.getElementById(drop).style.display = "grid";
     } else {
       document.getElementById(button).style.backgroundColor = "inherit";
