@@ -1,7 +1,7 @@
 :root {
   --a_clr:                  35, 200, 80;
-  --h1_ft:                  78;
-  --h2_ft:                  34; /*26*/
+  --h1_ft:                  92;
+  --h2_ft:                  38; /*26*/
   --h3_ft:                  17;
   --h4_ft:                  20;
   --default_ft:             20;
@@ -10,7 +10,7 @@
   --mbl_txt_scl:            1.7;
 
   --horrors_ft:             116;
-  --day_desc_ft:            22;
+  --day_desc_ft:            26;
 
   --main_bg_clr_1:          12, 12, 14; /*0*/
   --main_bg_clr_2:          44, 44, 46; /*32*/
@@ -58,14 +58,16 @@
 }
 
 h1 {
-  color: rgb(var(--main_theme_clr_1));
-  font-family: 'green_fuz';
+  color: rgb(var(--main_theme_clr_1));/*
+  font-family: 'green_fuz';*/
+  font-family: 'Jolly Lodger', cursive;
   font-size: calc(var(--h1_ft)*1px);
 }
 
 h2 {
-  color: rgb(var(--main_theme_clr_1));
-  font-family: 'Bangers';
+  color: rgb(var(--main_theme_clr_1));/*
+  font-family: 'Bangers';*/
+  font-family: 'Jolly Lodger', cursive;
   font-weight: 400;
   font-size: calc(var(--h2_ft)*1px);
 }
@@ -191,6 +193,7 @@ a:hover {
   padding: 0px;
   margin: 0px;
   height: auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1)
 }
 
 #content_my_txt_year {
@@ -237,11 +240,12 @@ a:hover {
 }
 
 .cal_cellXhdr_desc {
-  padding: 0px 0px 2px 0px;
+  padding: 0px 0px 6px 0px;
   margin: 0px;
   width: 100%;
-  color: rgb(var(--cal_hdr_clr));
-  font-family: 'Bangers';
+  color: rgb(var(--cal_hdr_clr));/*
+  font-family: 'Bangers';*/
+  font-family: 'Jolly Lodger', cursive;
   font-weight: 400;
   font-size: calc(var(--day_desc_ft)*1px);
   background:
@@ -261,8 +265,9 @@ a:hover {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  color: rgb(var(--cal_hdr_clr));
-  font-family: 'Bangers';
+  color: rgb(var(--cal_hdr_clr));/*
+  font-family: 'Bangers';*/
+  font-family: 'Jolly Lodger', cursive;
   font-weight: 400;
 }
 
@@ -270,8 +275,9 @@ a:hover {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  color: rgb(var(--cal_hdr_clr));
-  font-family: 'Bangers';
+  color: rgb(var(--cal_hdr_clr));/*
+  font-family: 'Bangers';*/
+  font-family: 'Jolly Lodger', cursive;
   font-weight: 400;
   text-align: center;
   display: none;
@@ -358,10 +364,14 @@ a:hover {
   box-sizing: border-box;
 }
 
+.cal_cell_button_div_dayMnth {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7)
+}
+/*
 .cal_cell_button_div_title {
   margin-top: calc(var(--mar)*1px);
 }
-
+*/
 .cal_drop {
   background-color:inherit;
   font-size: calc(var(--default_ft)*1px);
@@ -515,6 +525,10 @@ a:hover {
     margin-bottom: calc(calc(10*1vw)*var(--px_to_vw));
   }
 
+  #content_my_txt {
+    text-shadow: calc(calc(1*1vw)*var(--px_to_vw)) calc(calc(1*1vw)*var(--px_to_vw)) calc(calc(2*1vw)*var(--px_to_vw)) rgba(0, 0, 0, 1)
+  }
+
   #calendar {
     border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
@@ -532,7 +546,7 @@ a:hover {
   }
 
   .cal_cellXhdr_desc {
-    padding: 0vw 0vw calc(calc(2*1vw)*var(--px_to_vw)) 0vw;
+    padding: 0vw 0vw calc(calc(6*1vw)*var(--px_to_vw)) 0vw;
     background-size: 100% calc(calc(2*1vw)*var(--px_to_vw));
     font-size: calc(calc(var(--day_desc_ft)*1vw)*var(--px_to_vw));
   }
@@ -561,10 +575,14 @@ a:hover {
     background-color: rgb(var(--main_theme_clr_2_slct));
   }
 
+  .cal_cell_button_div_dayMnth {
+    text-shadow: calc(calc(1*1vw)*var(--px_to_vw)) calc(calc(1*1vw)*var(--px_to_vw)) calc(calc(2*1vw)*var(--px_to_vw)) rgba(0, 0, 0, 0.7)
+  }
+  /*
   .cal_cell_button_div_title {
     margin-top: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
-
+  */
   .cal_drop {
     padding: 0vw calc(calc(var(--mar)*0.5vw)*var(--px_to_vw)) calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
