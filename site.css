@@ -6,8 +6,8 @@
   --h4_ft:                  20;
   --default_ft:             20;
 
-  --mbl_hdr_scl:            2;
-  --mbl_txt_scl:            1.3;
+  --mbl_hdr_scl:            1.7;
+  --mbl_txt_scl:            1.7;
 
   --horrors_ft:             116;
   --day_desc_ft:            22;
@@ -582,7 +582,7 @@ a:hover {
 ****************** Mobile Page Width *********************
 *********************************************************/
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 420px) {
 
   @keyframes textflicker {
     from {
