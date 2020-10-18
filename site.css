@@ -1,17 +1,19 @@
 :root {
   --a_clr:                  35, 200, 80;
-  --h1_ft:                  86;
-  --h2_ft:                  26;
-  --h3_ft:                  18;
+  --h1_ft:                  78;
+  --h2_ft:                  34; /*26*/
+  --h3_ft:                  17;
   --h4_ft:                  16;
   --default_ft:             15;
 
-  --horrors_ft:             116;
-  --year_ft:                64;
+  --mbl_scl:                2;
 
-  --main_bg_clr_1:          0, 0, 0;
-  --main_bg_clr_2:          32, 32, 32;
-  --main_bg_clr_3:          42, 42, 42;
+  --horrors_ft:             116;
+  --day_desc_ft:            22;
+
+  --main_bg_clr_1:          12, 12, 14; /*0*/
+  --main_bg_clr_2:          44, 44, 46; /*32*/
+  --main_bg_clr_3:          62, 62, 64; /*42*/
   --main_txt_clr:           220, 220, 220;
   --main_theme_clr_1:       206, 93, 0;
   --main_theme_clr_2:       155, 0, 220;
@@ -22,7 +24,8 @@
   --container_width:        1168;
   --mar:                    8;
 
-  --cal_cellXnotHdr_ht:     156;
+  --cal_cellXnotHdr_ht:     160;
+  --cal_cell_butt_dia:      140;
 
   --px_to_vw:               calc(1/calc(1200/100));
 }
@@ -154,7 +157,7 @@ a:hover {
   color: rgba(var(--main_txt_clr), 0.5);
   font-family: green_fuz;
   font-weight: normal;
-  font-size: 116px;
+  font-size: calc(var(--horrors_ft)*1px);
   text-shadow: 3px 3px 16px rgba(var(--main_txt_clr), 0.9), -3px -3px 16px rgba(var(--main_txt_clr), 0.9);
   animation-name: textflicker;
   animation-duration: 4s;
@@ -187,7 +190,7 @@ a:hover {
 
 #content_my_txt_year {
   color: rgb(var(--main_theme_clr_2));
-  font-size: 64px;
+  font-size: inherit;
   font-family: inherit;
 }
 
@@ -235,6 +238,7 @@ a:hover {
   color: rgb(var(--cal_hdr_clr));
   font-family: 'Bangers';
   font-weight: 400;
+  font-size: calc(var(--day_desc_ft)*1px);
   background:
     linear-gradient(
       to right,
@@ -255,6 +259,17 @@ a:hover {
   color: rgb(var(--cal_hdr_clr));
   font-family: 'Bangers';
   font-weight: 400;
+}
+
+.cal_cellXhdr_dayXNS {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  color: rgb(var(--cal_hdr_clr));
+  font-family: 'Bangers';
+  font-weight: 400;
+  text-align: center;
+  display: none;
 }
 
 #cal_rowXr01 {
@@ -356,7 +371,7 @@ a:hover {
 .cal_drop_wrap {
   background-color: rgb(var(--main_bg_clr_1));
   display: grid;
-  grid-template: repeat(3, auto) / repeat(20, minmax(0, 1fr));
+  grid-template: repeat(3, auto) / repeat(48, minmax(0, 1fr));
   padding: calc(var(--mar)*1px);
   width: 100%;
   box-sizing: border-box;
@@ -375,11 +390,11 @@ a:hover {
 }
 
 .cal_drop_divXmeta {
-  grid-column: 1 / 21;
+  grid-column: 1 / 49;
 }
 
 .cal_drop_divXpostr {
-  grid-column: 1 / 4;
+  grid-column: 1 / 11;
 }
 
 .cal_drop_divXpostr_img {
@@ -387,15 +402,15 @@ a:hover {
 }
 
 .cal_drop_divXsynop {
-  grid-column: 4 / 10;
+  grid-column: 11 / 23 ;
 }
 
 .cal_drop_divXwatch {
-  grid-column: 11 / 16;
+  grid-column: 25 / 37;
 }
 
 .cal_drop_divXabout {
-  grid-column: 16 / 21;
+  grid-column: 37 / 49;
 }
 
 .cal_drop_divXmeta_NS {
@@ -479,10 +494,6 @@ a:hover {
     margin-bottom: calc(calc(10*1vw)*var(--px_to_vw));
   }
 
-  #content_my_txt_year {
-    font-size: calc(calc(var(--year_ft)*1vw)*var(--px_to_vw));
-  }
-
   #calendar {
     border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
@@ -502,6 +513,7 @@ a:hover {
   .cal_cellXhdr_desc {
     padding: 0vw 0vw calc(calc(2*1vw)*var(--px_to_vw)) 0vw;
     background-size: 100% calc(calc(2*1vw)*var(--px_to_vw));
+    font-size: calc(calc(var(--day_desc_ft)*1vw)*var(--px_to_vw));
   }
 
   .cal_cellXnotHdr {
@@ -543,6 +555,91 @@ a:hover {
 
   .cal_drop_div {
     padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
-    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+  border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
 }
+
+
+/*********************************************************
+****************** Mobile Page Width *********************
+*********************************************************
+
+@media screen and (max-width: 600px) {
+
+  @keyframes textflicker {
+    from {
+      color: rgba(var(--main_txt_clr), 0.05);
+      text-shadow: calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0), calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0);
+    }
+    to {
+      color: rgba(var(--main_txt_clr), 0.5);
+      text-shadow: calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9), calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9);
+    }
+  }
+
+  h1 {
+    font-size: calc(calc(calc(var(--h1_ft)*var(--mbl_scl))*1vw)*var(--px_to_vw));
+  }
+
+  h2 {
+    font-size: calc(calc(calc(var(--h2_ft)*var(--mbl_scl))*1vw)*var(--px_to_vw));
+  }
+
+  #container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #body_divXhdr_txtXhdr {
+    font-size: calc(calc(calc(var(--horrors_ft)*var(--mbl_scl))*1vw)*var(--px_to_vw));
+    text-shadow: calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9), calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(-3*var(--mbl_scl))*1vw)*var(--px_to_vw)) calc(calc(calc(16*var(--mbl_scl))*1vw)*var(--px_to_vw)) rgba(var(--main_txt_clr), 0.9);
+    text-align: center;
+  }
+
+  .cal_cellXhdr_desc {
+    display: none;
+  }
+
+  .cal_cellXhdr_day {
+  display: none;
+  }
+
+  .cal_cellXhdr_dayXNS {
+    display: block;
+  }
+
+  .cal_cell_button {
+    height: calc(calc(var(--cal_cell_butt_dia)*1vw)*var(--px_to_vw));
+    width: calc(calc(var(--cal_cell_butt_dia)*1vw)*var(--px_to_vw));
+    border-radius: 50%
+  }
+
+  .cal_cell_button_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cal_cell_button_div_dayMnth {
+    text-align: center;
+  }
+
+  .cal_cell_button_div_title {
+    display: none;
+  }
+
+  .cal_drop_divXmeta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .cal_drop_divXmeta_NS {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+}
+
+*/
