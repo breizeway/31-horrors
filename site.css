@@ -376,7 +376,7 @@ a:hover {
 .cal_drop_wrap {
   background-color: rgb(var(--main_bg_clr_1));
   display: grid;
-  grid-template: repeat(3, auto) / repeat(48, minmax(0, 1fr));
+  grid-template: repeat(6, auto) / repeat(48, minmax(0, 1fr));
   padding: calc(var(--mar)*1px);
   width: 100%;
   box-sizing: border-box;
@@ -400,8 +400,8 @@ a:hover {
 }
 
 .cal_drop_divXpostr {
-  grid-row: 2 / 4;
-  grid-column: 1 / 11;
+  grid-row: 2 / 7;
+  grid-column: 1 / 15;
 }
 
 .cal_drop_divXpostr_img {
@@ -409,18 +409,24 @@ a:hover {
 }
 
 .cal_drop_divXsynop {
-  grid-row: 2 / 4;
-  grid-column: 12 / 28 ;
+  grid-row: 2 / 5;
+  grid-column: 16 / 49 ;
 }
 
 .cal_drop_divXwatch {
-  grid-row: 2 / 3;
-  grid-column: 29 / 49;
+  grid-row: 5 / 7;
+  grid-column: 16 / 32;/*
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;*/
 }
 
 .cal_drop_divXabout {
-  grid-row: 3 / 4;
-  grid-column: 29 / 49;
+  grid-row: 5 / 7;
+  grid-column: 33 / 49;/*
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;*/
 }
 
 .cal_drop_divXmeta_NS {
