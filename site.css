@@ -7,6 +7,7 @@
   --default_ft:             20;
 
   --mbl_hdr_scl:            1.7;
+  --mbl_h2_scl:             2;
   --mbl_txt_scl:            1.7;
 
   --horrors_ft:             116;
@@ -624,7 +625,7 @@ a:hover {
   }
 
   h2 {
-    font-size: calc(calc(calc(var(--h2_ft)*var(--mbl_hdr_scl))*1vw)*var(--px_to_vw));
+    font-size: calc(calc(calc(var(--h2_ft)*var(--mbl_h2_scl))*1vw)*var(--px_to_vw));
   }
 
   h4 {
