@@ -634,7 +634,7 @@ a:hover {
 
   span, p, ul {
     font-size: calc(calc(calc(var(--default_ft)*var(--mbl_txt_scl))*1vw)*var(--px_to_vw));
-    line-height: calc(calc(calc(calc(var(--default_ft)*var(--mbl_txt_scl))*1.2)*1vw)*var(--px_to_vw))
+    line-height: calc(calc(calc(calc(var(--default_ft)*var(--mbl_txt_scl))*1.4)*1vw)*var(--px_to_vw))
   }
 
   #body {
