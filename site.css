@@ -609,7 +609,7 @@ a:hover {
 ****************** Mobile Page Width *********************
 *********************************************************/
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1000px) {
 
   @keyframes textflicker {
     from {
@@ -647,6 +647,10 @@ a:hover {
     width: 100%;
   }
 
+  .cal_cellXhdr {
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+  }
+
   #body_divXhdr {
     width: 100%;
   }
@@ -668,6 +672,11 @@ a:hover {
 
   .cal_cellXhdr_dayXNS {
     display: block;
+  }
+
+  .cal_cellXnotHdr {
+    display: flex;
+    justify-content: center;
   }
 
   .cal_cell_button {
