@@ -609,7 +609,7 @@ a:hover {
 ****************** Mobile Page Width *********************
 *********************************************************/
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 420px) {
 
   @keyframes textflicker {
     from {
