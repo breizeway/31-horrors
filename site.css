@@ -407,11 +407,11 @@ a:hover {
 
 .cal_drop_divXmeta {
   grid-row: 1 / 2;
-  grid-column: 1 / 49;
+  grid-column: 16 / 49;
 }
 
 .cal_drop_divXpostr {
-  grid-row: 2 / 13;
+  grid-row: 1 / 13;
   grid-column: 1 / 15;
 }
 
