@@ -206,7 +206,7 @@ a:hover {
 #calendar {
   background-color: inherit;
   display: grid;
-  grid-template: repeat(12, auto) / 1fr;
+  grid-template: repeat(8, auto) / 1fr;
   height: auto;
   width: 100%;
   box-sizing: inherit;
@@ -216,7 +216,7 @@ a:hover {
 
 .cal_row {
   display: grid;
-  grid-template: repeat(7, auto) / repeat(7, minmax(0, 1fr));
+  grid-template: repeat(2, auto) / repeat(7, minmax(0, 1fr));
   box-sizing: inherit;
   padding: 0px calc(var(--mar)*0.5px);
   width: 100%;
@@ -373,13 +373,18 @@ a:hover {
   margin-top: calc(var(--mar)*1px);
 }
 */
+#cal_rowXr08 {
+  padding: 0px;
+  margin: 0px;
+}
+
 .cal_drop {
   background-color:inherit;
   font-size: calc(var(--default_ft)*1px);
   grid-column: 1 / 8;
-  margin: 0px;
-  display: none;
-  padding: 0px calc(var(--mar)*0.5px) calc(var(--mar)*1px) calc(var(--mar)*0.5px);
+  display: none;/*
+  padding: 0px calc(var(--mar)*0.5px) calc(var(--mar)*1px) calc(var(--mar)*0.5px);*/
+  padding: 0px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -390,8 +395,8 @@ a:hover {
   grid-template: repeat(12, auto) / repeat(48, minmax(0, 1fr));
   padding: calc(var(--mar)*1px);
   width: 100%;
-  box-sizing: border-box;
-  border-radius: calc(var(--mar)*1px);
+  box-sizing: border-box;/*
+  border-radius: calc(var(--mar)*1px);*/
 }
 
 .cal_drop_div {
@@ -585,13 +590,15 @@ a:hover {
     margin-top: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
   }
   */
+  /*
   .cal_drop {
     padding: 0vw calc(calc(var(--mar)*0.5vw)*var(--px_to_vw)) calc(calc(var(--mar)*1vw)*var(--px_to_vw)) calc(calc(var(--mar)*0.5vw)*var(--px_to_vw));
   }
+  */
 
   .cal_drop_wrap {
-    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
-    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));
+    padding: calc(calc(var(--mar)*1vw)*var(--px_to_vw));/*
+    border-radius: calc(calc(var(--mar)*1vw)*var(--px_to_vw));*/
   }
 
   .cal_drop_div {
