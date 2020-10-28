@@ -29,6 +29,7 @@
 
 <body id="body">
   <div id="container">
+    <!--<h2 id="date_test"></h2>-->
 
     <div id="body_divXhdr">
       <h1 id="body_divXhdr_txtXhdr" class="page_header_txt">31 Horrors</h1>
@@ -1924,6 +1925,11 @@
   ***************************************/
   var media_mbl = window.matchMedia("(max-width: 420px)")
 
+  var today = new Date();
+  var today_local = today.toLocaleDateString();
+  var date = /*today_local.substring(6,10)+'-'+today_local.substring(0,2)+'-'+*/'day_'+today_local.substring(3,5);
+ /* document.getElementById("date_test").innerHTML = date;*/
+
 
   var year =                    "2020";
 
@@ -2514,6 +2520,50 @@
   document.getElementById("cal_cellXr07c07_button_div_dayMnth").innerHTML = '0';
 
 
+  document.getElementById("cal_cellXr02c01_button").classList.add("day_00");
+  document.getElementById("cal_cellXr02c02_button").classList.add("day_00");
+  document.getElementById("cal_cellXr02c03_button").classList.add("day_00");
+  document.getElementById("cal_cellXr02c04_button").classList.add("day_00");
+  document.getElementById("cal_cellXr02c05_button").classList.add("day_01");
+  document.getElementById("cal_cellXr02c06_button").classList.add("day_02");
+  document.getElementById("cal_cellXr02c07_button").classList.add("day_03");
+  document.getElementById("cal_cellXr03c01_button").classList.add("day_04");
+  document.getElementById("cal_cellXr03c02_button").classList.add("day_05");
+  document.getElementById("cal_cellXr03c03_button").classList.add("day_06");
+  document.getElementById("cal_cellXr03c04_button").classList.add("day_07");
+  document.getElementById("cal_cellXr03c05_button").classList.add("day_08");
+  document.getElementById("cal_cellXr03c06_button").classList.add("day_09");
+  document.getElementById("cal_cellXr03c07_button").classList.add("day_10");
+  document.getElementById("cal_cellXr04c01_button").classList.add("day_11");
+  document.getElementById("cal_cellXr04c02_button").classList.add("day_12");
+  document.getElementById("cal_cellXr04c03_button").classList.add("day_13");
+  document.getElementById("cal_cellXr04c04_button").classList.add("day_14");
+  document.getElementById("cal_cellXr04c05_button").classList.add("day_15");
+  document.getElementById("cal_cellXr04c06_button").classList.add("day_16");
+  document.getElementById("cal_cellXr04c07_button").classList.add("day_17");
+  document.getElementById("cal_cellXr05c01_button").classList.add("day_18");
+  document.getElementById("cal_cellXr05c02_button").classList.add("day_19");
+  document.getElementById("cal_cellXr05c03_button").classList.add("day_20");
+  document.getElementById("cal_cellXr05c04_button").classList.add("day_21");
+  document.getElementById("cal_cellXr05c05_button").classList.add("day_22");
+  document.getElementById("cal_cellXr05c06_button").classList.add("day_23");
+  document.getElementById("cal_cellXr05c07_button").classList.add("day_24");
+  document.getElementById("cal_cellXr06c01_button").classList.add("day_25");
+  document.getElementById("cal_cellXr06c02_button").classList.add("day_26");
+  document.getElementById("cal_cellXr06c03_button").classList.add("day_27");
+  document.getElementById("cal_cellXr06c04_button").classList.add("day_28");
+  document.getElementById("cal_cellXr06c05_button").classList.add("day_29");
+  document.getElementById("cal_cellXr06c06_button").classList.add("day_30");
+  document.getElementById("cal_cellXr06c07_button").classList.add("day_31");
+  document.getElementById("cal_cellXr07c01_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c02_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c03_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c04_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c05_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c06_button").classList.add("day_00");
+  document.getElementById("cal_cellXr07c07_button").classList.add("day_00");
+
+
   document.getElementById("cal_cellXr02c01_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr02c02_button_div_title").innerHTML = film_00_title;
   document.getElementById("cal_cellXr02c03_button_div_title").innerHTML = film_00_title;
@@ -3100,7 +3150,6 @@ document.getElementById("cal_dropXr07c07_divXmeta_NS_dayWeek").innerHTML = sat_d
       a3.innerHTML = drop_about_a3;
     });
   };
-  window.onload = set_text;
 
   function click__cal_button(button, drop) {
     var all_buttons = document.querySelectorAll(".cal_cell_button");
@@ -3153,6 +3202,21 @@ document.getElementById("cal_dropXr07c07_divXmeta_NS_dayWeek").innerHTML = sat_d
       window.open(url,"_blank");
     }
   };
+
+  function click_day() {
+    var all_buttons = document.querySelectorAll('.'+date);
+    all_buttons.forEach(function(each_button) {
+      each_button.click();
+    });
+  };
+
+  function onload() {
+    click_day();
+    set_text();
+  }
+
+  window.onload = onload();
+
 </script>
 
 </html>
